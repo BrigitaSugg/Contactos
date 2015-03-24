@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class ContactEvent {
     private ContactsContract.CommonDataKinds.Email userEmail;
-    private ContactsContract.CommonDataKinds.Email email;
+    private ContactsContract.CommonDataKinds.Email connectionEmail;
     private Long key;
     private Date date;
     private String type;
@@ -26,12 +26,12 @@ public class ContactEvent {
         this.userEmail = userEmail;
     }
 
-    public ContactsContract.CommonDataKinds.Email getEmail() {
-        return email;
+    public ContactsContract.CommonDataKinds.Email getConnectionEmail() {
+        return connectionEmail;
     }
 
-    public void setEmail(ContactsContract.CommonDataKinds.Email email) {
-        this.email = email;
+    public void setConnectionEmail(ContactsContract.CommonDataKinds.Email connectionEmail) {
+        this.connectionEmail = connectionEmail;
     }
 
     public Long getKey() {
