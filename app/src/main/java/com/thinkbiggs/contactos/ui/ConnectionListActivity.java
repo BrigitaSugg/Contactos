@@ -1,12 +1,14 @@
-package com.thinkbiggs.contactos;
+package com.thinkbiggs.contactos.ui;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.thinkbiggs.contactos.R;
 
-public class ConnectionList extends ActionBarActivity {
+
+public class ConnectionListActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

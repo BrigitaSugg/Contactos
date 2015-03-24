@@ -1,4 +1,4 @@
-package com.thinkbiggs.contactos;
+package com.thinkbiggs.contactos.objects;
 
 import android.graphics.Picture;
 import android.location.Location;
