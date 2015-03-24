@@ -4,65 +4,63 @@ import android.graphics.Picture;
 import android.location.Location;
 import android.provider.ContactsContract;
 
-import java.util.Date;
-
 /**
  * Created by NB on 3/24/2015.
  * User class representing the person using * the app. Not likely to be used until we move to a database.
  */
 public class User {
-    private ContactsContract.CommonDataKinds.Email userEmail;
-    private String password;
-    private String userName;
-    private String userLastName;
-    private Location userLoc;
-    private Picture userPic;
+    private ContactsContract.CommonDataKinds.Email mUserEmail;
+    private String mPassword;
+    private String mUserName;
+    private String mUserLastName;
+    private Location mUserLoc;
+    private Picture mUserPic;
 
     public ContactsContract.CommonDataKinds.Email getUserEmail() {
-        return userEmail;
+        return mUserEmail;
     }
 
     public void setUserEmail(ContactsContract.CommonDataKinds.Email userEmail) {
-        this.userEmail = userEmail;
+        this.mUserEmail = userEmail;
     }
 
     public String getPassword() {
-        return password;
+        return mPassword;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.mPassword = password;
     }
 
     public String getUserName() {
-        return userName;
+        return mUserName;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.mUserName = userName;
     }
 
     public Picture getUserPic() {
-        return userPic;
+        return mUserPic;
     }
 
     public void setUserPic(Picture userPic) {
-        this.userPic = userPic;
+        this.mUserPic = userPic;
     }
 
     public String getUserLastName() {
-        return userLastName;
+        return mUserLastName;
     }
 
     public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+        this.mUserLastName = userLastName;
     }
 
     public Location getUserLoc() {
-        return userLoc;
+        return mUserLoc;
     }
 
     public void setUserLoc(Location userLoc) {
-        this.userLoc = userLoc;
+        this.mUserLoc = userLoc;
     }
 }

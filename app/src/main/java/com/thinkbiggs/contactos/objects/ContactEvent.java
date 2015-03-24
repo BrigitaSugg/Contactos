@@ -10,68 +10,68 @@ import java.util.Date;
  * Data structure for the ContactEvent (event) Object
  */
 public class ContactEvent {
-    private ContactsContract.CommonDataKinds.Email userEmail;
-    private ContactsContract.CommonDataKinds.Email connectionEmail;
-    private Long key;
-    private Date date;
-    private String type;
-    private String venue;
-    private String report;
+    private ContactsContract.CommonDataKinds.Email mUserEmail;
+    private ContactsContract.CommonDataKinds.Email mConnectionEmail;
+    private Long mKey;
+    private Date mDate;
+    private String mType;
+    private String mVenue;
+    private String mReport;
 
     public ContactsContract.CommonDataKinds.Email getUserEmail() {
-        return userEmail;
+        return mUserEmail;
     }
 
     public void setUserEmail(ContactsContract.CommonDataKinds.Email userEmail) {
-        this.userEmail = userEmail;
+        this.mUserEmail = userEmail;
     }
 
     public ContactsContract.CommonDataKinds.Email getConnectionEmail() {
-        return connectionEmail;
+        return mConnectionEmail;
     }
 
     public void setConnectionEmail(ContactsContract.CommonDataKinds.Email connectionEmail) {
-        this.connectionEmail = connectionEmail;
+        this.mConnectionEmail = connectionEmail;
     }
 
     public Long getKey() {
-        return key;
+        return mKey;
     }
 
     public void setKey(Long key) {
-        this.key = key;
+        this.mKey = key;
     }
 
     public Date getDate() {
-        return date;
+        return mDate;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.mDate = date;
     }
 
     public String getType() {
-        return type;
+        return mType;
     }
 
     public void setType(String type) {
-        this.type = type;
+        this.mType = type;
     }
 
     public String getVenue() {
-        return venue;
+        return mVenue;
     }
 
     public void setVenue(String venue) {
-        this.venue = venue;
+        this.mVenue = venue;
     }
 
     public String getReport() {
-        return report;
+        return mReport;
     }
 
     public void setReport(String report) {
-        this.report = report;
+        this.mReport = report;
     }
 
 }
