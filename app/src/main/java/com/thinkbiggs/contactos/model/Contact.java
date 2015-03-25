@@ -14,8 +14,8 @@ public class Contact {
     //private Location mLocation;
     //private File mPicture;
     private String mNotes;
-    private int mLastDate;
-    private int mNextDate;
+    private String mLastDate;
+    private String mNextDate;
     private String mLastReport;
     private String mNextReport;
 
@@ -24,7 +24,7 @@ public class Contact {
 
     }
 
-    public Contact(int id, String firstName, String notes, int lastDate, int nextDate, String lastReport, String nextReport) {
+    public Contact(int id, String firstName, String notes, String lastDate, String nextDate, String lastReport, String nextReport) {
         this._id = id;
         this.mFirstName = firstName;
         this.mNotes = notes;
@@ -58,19 +58,19 @@ public class Contact {
         mNotes = notes;
     }
 
-    public int getLastDate() {
+    public String getLastDate() {
         return mLastDate;
     }
 
-    public void setLastDate(int lastDate) {
+    public void setLastDate(String lastDate) {
         mLastDate = lastDate;
     }
 
-    public int getNextDate() {
+    public String getNextDate() {
         return mNextDate;
     }
 
-    public void setNextDate(int nextDate) {
+    public void setNextDate(String nextDate) {
         mNextDate = nextDate;
     }
 
