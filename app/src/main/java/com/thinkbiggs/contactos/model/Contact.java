@@ -1,10 +1,5 @@
 package com.thinkbiggs.contactos.model;
 
-import android.location.Location;
-import android.provider.ContactsContract;
-
-import java.io.File;
-
 /**
  * Created by NB on 3/24/2015.
  * Data structure for a User's connections.
@@ -12,17 +7,31 @@ import java.io.File;
  */
 public class Contact {
     private int _id;
-    private int mUserId;
-    private ContactsContract.CommonDataKinds.Email mEmail;
+    //private int mUserId;
+    //private String mEmail;
     private String mFirstName;
-    private String mLastName;
-    private Location mLocation;
-    private File mPicture;
+    //private String mLastName;
+    //private Location mLocation;
+    //private File mPicture;
     private String mNotes;
+    private int mLastDate;
+    private int mNextDate;
+    private String mLastReport;
+    private String mNextReport;
+
 
     public Contact() {
 
+    }
 
+    public Contact(int id, String firstName, String notes, int lastDate, int nextDate, String lastReport, String nextReport) {
+        this._id = id;
+        this.mFirstName = firstName;
+        this.mNotes = notes;
+        this.mLastDate = lastDate;
+        this.mNextDate = nextDate;
+        this.mLastReport = lastReport;
+        this.mNextReport = nextReport;
     }
 
     public int get_id() {
@@ -33,52 +42,12 @@ public class Contact {
         this._id = _id;
     }
 
-    public int getUserId() {
-        return mUserId;
-    }
-
-    public void setUserId(int userId) {
-        this.mUserId = userId;
-    }
-
-    public ContactsContract.CommonDataKinds.Email getEmail() {
-        return mEmail;
-    }
-
-    public void setEmail(ContactsContract.CommonDataKinds.Email email) {
-        this.mEmail = email;
-    }
-
     public String getFirstName() {
         return mFirstName;
     }
 
     public void setFirstName(String firstName) {
-        this.mFirstName = firstName;
-    }
-
-    public String getLastName() {
-        return mLastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.mLastName = lastName;
-    }
-
-    public Location getLocation() {
-        return mLocation;
-    }
-
-    public void setLocation(Location location) {
-        this.mLocation = location;
-    }
-
-    public File getPicture() {
-        return mPicture;
-    }
-
-    public void setPicture(File picture) {
-        this.mPicture = picture;
+        mFirstName = firstName;
     }
 
     public String getNotes() {
@@ -86,6 +55,38 @@ public class Contact {
     }
 
     public void setNotes(String notes) {
-        this.mNotes = notes;
+        mNotes = notes;
+    }
+
+    public int getLastDate() {
+        return mLastDate;
+    }
+
+    public void setLastDate(int lastDate) {
+        mLastDate = lastDate;
+    }
+
+    public int getNextDate() {
+        return mNextDate;
+    }
+
+    public void setNextDate(int nextDate) {
+        mNextDate = nextDate;
+    }
+
+    public String getLastReport() {
+        return mLastReport;
+    }
+
+    public void setLastReport(String lastReport) {
+        mLastReport = lastReport;
+    }
+
+    public String getNextReport() {
+        return mNextReport;
+    }
+
+    public void setNextReport(String nextReport) {
+        mNextReport = nextReport;
     }
 }

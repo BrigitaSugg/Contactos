@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by NB on 3/24/2015.
  * Data structure for the ContactEvent (event) Object
- */
+
 public class ContactEvent {
     private int _id;
     private int mUserId;
@@ -73,3 +73,4 @@ public class ContactEvent {
     }
 
 }
+*/

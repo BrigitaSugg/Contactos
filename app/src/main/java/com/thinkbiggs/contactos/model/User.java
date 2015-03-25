@@ -7,10 +7,10 @@ import android.provider.ContactsContract;
 /**
  * Created by NB on 3/24/2015.
  * User class representing the person using * the app. Not likely to be used until we move to a database.
- */
+
 public class User {
     private int _id;
-    private ContactsContract.CommonDataKinds.Email mUserEmail;
+    private String mUserEmail;
     private String mPassword;
     private String mUserName;
     private String mUserLastName;
@@ -25,12 +25,12 @@ public class User {
         this._id = _id;
     }
 
-    public ContactsContract.CommonDataKinds.Email getUserEmail() {
+    public String getUserEmail() {
         return mUserEmail;
     }
 
-    public void setUserEmail(ContactsContract.CommonDataKinds.Email userEmail) {
-        this.mUserEmail = userEmail;
+    public void setUserEmail(String userEmail) {
+        mUserEmail = userEmail;
     }
 
     public String getPassword() {
@@ -73,3 +73,4 @@ public class User {
         this.mUserLoc = userLoc;
     }
 }
+*/
