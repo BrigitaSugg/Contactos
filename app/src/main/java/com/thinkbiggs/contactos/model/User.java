@@ -9,12 +9,21 @@ import android.provider.ContactsContract;
  * User class representing the person using * the app. Not likely to be used until we move to a database.
  */
 public class User {
+    private int _id;
     private ContactsContract.CommonDataKinds.Email mUserEmail;
     private String mPassword;
     private String mUserName;
     private String mUserLastName;
     private Location mUserLoc;
     private Picture mUserPic;
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
 
     public ContactsContract.CommonDataKinds.Email getUserEmail() {
         return mUserEmail;

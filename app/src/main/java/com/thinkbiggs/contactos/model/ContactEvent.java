@@ -1,7 +1,5 @@
 package com.thinkbiggs.contactos.model;
 
-import android.provider.ContactsContract;
-
 import java.util.Date;
 
 
@@ -10,36 +8,36 @@ import java.util.Date;
  * Data structure for the ContactEvent (event) Object
  */
 public class ContactEvent {
-    private ContactsContract.CommonDataKinds.Email mUserEmail;
-    private ContactsContract.CommonDataKinds.Email mConnectionEmail;
-    private Long mKey;
+    private int _id;
+    private int mUserId;
+    private int mContactId;
     private Date mDate;
     private String mType;
     private String mVenue;
     private String mReport;
 
-    public ContactsContract.CommonDataKinds.Email getUserEmail() {
-        return mUserEmail;
+    public int getUserId() {
+        return mUserId;
     }
 
-    public void setUserEmail(ContactsContract.CommonDataKinds.Email userEmail) {
-        this.mUserEmail = userEmail;
+    public void setUserId(int userId) {
+        this.mUserId = userId;
     }
 
-    public ContactsContract.CommonDataKinds.Email getConnectionEmail() {
-        return mConnectionEmail;
+    public int getContactId() {
+        return mContactId;
     }
 
-    public void setConnectionEmail(ContactsContract.CommonDataKinds.Email connectionEmail) {
-        this.mConnectionEmail = connectionEmail;
+    public void setContactId(int contactId) {
+        this.mContactId = contactId;
     }
 
-    public Long getKey() {
-        return mKey;
+    public int get_id() {
+        return _id;
     }
 
-    public void setKey(Long key) {
-        this.mKey = key;
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
     public Date getDate() {

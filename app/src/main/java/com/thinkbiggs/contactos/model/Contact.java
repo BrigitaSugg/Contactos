@@ -8,10 +8,11 @@ import java.io.File;
 /**
  * Created by NB on 3/24/2015.
  * Data structure for a User's connections.
- * testmonkey
+ *
  */
-public class Connection {
-    private ContactsContract.CommonDataKinds.Email mUserEmail;
+public class Contact {
+    private int _id;
+    private int mUserId;
     private ContactsContract.CommonDataKinds.Email mEmail;
     private String mFirstName;
     private String mLastName;
@@ -19,12 +20,25 @@ public class Connection {
     private File mPicture;
     private String mNotes;
 
-    public ContactsContract.CommonDataKinds.Email getUserEmail() {
-        return mUserEmail;
+    public Contact() {
+
+
     }
 
-    public void setUserEmail(ContactsContract.CommonDataKinds.Email mUserEmail) {
-        this.mUserEmail = mUserEmail;
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public int getUserId() {
+        return mUserId;
+    }
+
+    public void setUserId(int userId) {
+        this.mUserId = userId;
     }
 
     public ContactsContract.CommonDataKinds.Email getEmail() {
