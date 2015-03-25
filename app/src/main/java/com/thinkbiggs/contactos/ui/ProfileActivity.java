@@ -1,9 +1,11 @@
 package com.thinkbiggs.contactos.ui;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.thinkbiggs.contactos.R;
 
@@ -14,7 +16,10 @@ public class ProfileActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
     }
-
+    public void onBack(View v){
+        Intent intent = new Intent(this, ConnectionListActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
