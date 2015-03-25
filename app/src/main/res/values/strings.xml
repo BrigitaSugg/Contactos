@@ -4,6 +4,7 @@
     <string name="hello_world">Hello Nicolas!</string>
     <string name="name">Name</string>
     <string name="contact_email">Email</string>
+    <string name="location_details">Location</string>
     <string name="meeting_details">Last Meeting notes</string>
     <string name="action_settings">Settings</string>
     <string name="add_contact_button">Go to new activity</string>
