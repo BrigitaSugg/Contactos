@@ -63,7 +63,8 @@
         android:layout_alignStart="@+id/idLocation"
         android:layout_marginLeft="50dp"
         android:layout_marginStart="50dp"
-        android:enabled="true" />
+        android:enabled="true"
+        android:hint="Last Date"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -74,7 +75,8 @@
         android:enabled="true"
         android:layout_below="@+id/lastDateMet"
         android:layout_alignLeft="@+id/lastDateMet"
-        android:layout_alignStart="@+id/lastDateMet" />
+        android:layout_alignStart="@+id/lastDateMet"
+        android:hint="Next Date"/>
 
     <EditText
         android:layout_width="match_parent"

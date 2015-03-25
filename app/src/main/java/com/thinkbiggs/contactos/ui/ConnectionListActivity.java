@@ -29,7 +29,6 @@ public class ConnectionListActivity extends ListActivity {
         Contact bert = new Contact("Bert Balloon", "Bert\'s cool", "01/01/1900", "01/02/2010", "Bert was a baloon", "Is bert still a balloon?");
         db.addContact(bert);
         List<Contact> contacts = db.getAllContacts();
-        int count = db.getContactsCount();
 
         ArrayAdapter<Contact> adapter = new ArrayAdapter<Contact>(this,android.R.layout.simple_list_item_1, contacts);
         setListAdapter(adapter);
