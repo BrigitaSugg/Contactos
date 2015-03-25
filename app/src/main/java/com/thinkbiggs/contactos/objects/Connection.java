@@ -10,67 +10,67 @@ import java.io.File;
  * Data structure for a User's connections.
  */
 public class Connection {
-    private ContactsContract.CommonDataKinds.Email userEmail;
-    private ContactsContract.CommonDataKinds.Email email;
-    private String firstName;
-    private String lastName;
-    private Location location;
-    private File picture;
-    private String notes;
+    private ContactsContract.CommonDataKinds.Email mUserEmail;
+    private ContactsContract.CommonDataKinds.Email mEmail;
+    private String mFirstName;
+    private String mLastName;
+    private Location mLocation;
+    private File mPicture;
+    private String mNotes;
 
     public ContactsContract.CommonDataKinds.Email getUserEmail() {
-        return userEmail;
+        return mUserEmail;
     }
 
-    public void setUserEmail(ContactsContract.CommonDataKinds.Email userEmail) {
-        this.userEmail = userEmail;
+    public void setUserEmail(ContactsContract.CommonDataKinds.Email mUserEmail) {
+        this.mUserEmail = mUserEmail;
     }
 
     public ContactsContract.CommonDataKinds.Email getEmail() {
-        return email;
+        return mEmail;
     }
 
     public void setEmail(ContactsContract.CommonDataKinds.Email email) {
-        this.email = email;
+        this.mEmail = email;
     }
 
     public String getFirstName() {
-        return firstName;
+        return mFirstName;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.mFirstName = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return mLastName;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.mLastName = lastName;
     }
 
     public Location getLocation() {
-        return location;
+        return mLocation;
     }
 
     public void setLocation(Location location) {
-        this.location = location;
+        this.mLocation = location;
     }
 
     public File getPicture() {
-        return picture;
+        return mPicture;
     }
 
     public void setPicture(File picture) {
-        this.picture = picture;
+        this.mPicture = picture;
     }
 
     public String getNotes() {
-        return notes;
+        return mNotes;
     }
 
     public void setNotes(String notes) {
-        this.notes = notes;
+        this.mNotes = notes;
     }
 }
