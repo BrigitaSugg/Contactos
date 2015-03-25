@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+
 import com.thinkbiggs.contactos.R;
 import com.thinkbiggs.contactos.database.DatabaseHandler;
 import com.thinkbiggs.contactos.model.Contact;
@@ -24,14 +26,21 @@ public class ConnectionListActivity extends ListActivity {
         setContentView(R.layout.activity_connection_list);
 
         DatabaseHandler db = new DatabaseHandler(this);
-
+        Contact bert = new Contact("Bert Balloon", "Bert\'s cool", "01/01/1900", "01/02/2010", "Bert was a baloon", "Is bert still a balloon?");
+        db.addContact(bert);
         List<Contact> contacts = db.getAllContacts();
+        int count = db.getContactsCount();
 
+        ArrayAdapter<Contact> adapter = new ArrayAdapter<Contact>(this,android.R.layout.simple_list_item_1, contacts);
+        setListAdapter(adapter);
+
+        /*
         String[] ContactsList = {"Nicolai", "Nate", "Joshua"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 ContactsList);
         setListAdapter(adapter);
+        */
     }
     public void goToNewActivity(View v){
         Intent intent = new Intent(this, ProfileActivity.class);
