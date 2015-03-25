@@ -8,6 +8,7 @@ import java.io.File;
 /**
  * Created by NB on 3/24/2015.
  * Data structure for a User's connections.
+ * testmonkey
  */
 public class Connection {
     private ContactsContract.CommonDataKinds.Email mUserEmail;
