@@ -1,4 +1,4 @@
-package com.thinkbiggs.contactos.objects;
+package com.thinkbiggs.contactos.model;
 
 import android.location.Location;
 import android.provider.ContactsContract;
