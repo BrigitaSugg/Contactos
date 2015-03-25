@@ -7,6 +7,27 @@
     tools:context="com.thinkbiggs.contactos.ui.ProfileActivity"
     android:id="@+id/ProfileRelativeLayout">
 
+    <QuickContactBadge
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quickContactBadge"
+        android:layout_above="@+id/idUserId"
+        android:layout_alignRight="@+id/idUserId"
+        android:layout_alignEnd="@+id/idUserId"
+        android:layout_alignTop="@+id/idName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/idUserId"
+        android:layout_below="@+id/lastDateMet"
+        android:layout_alignRight="@+id/Back"
+        android:layout_alignEnd="@+id/Back" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,15 +42,15 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/idEmail"
+        android:id="@+id/idLocation"
         android:layout_below="@+id/idName"
         android:layout_alignLeft="@+id/idName"
         android:layout_alignStart="@+id/idName"
         android:layout_alignParentEnd="false"
-        android:hint="@string/contact_email"
-        android:editable="true" />
+        android:hint="@string/location_details"
+        android:editable="true"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,9 +58,9 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/lastDateMet"
-        android:layout_below="@+id/idEmail"
-        android:layout_alignLeft="@+id/idEmail"
-        android:layout_alignStart="@+id/idEmail"
+        android:layout_below="@+id/idLocation"
+        android:layout_alignLeft="@+id/idLocation"
+        android:layout_alignStart="@+id/idLocation"
         android:layout_marginLeft="50dp"
         android:layout_marginStart="50dp"
         android:enabled="true" />
@@ -56,24 +77,43 @@
         android:layout_alignStart="@+id/lastDateMet" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/GeneralNotes"
+        android:id="@+id/LastMeetingNotes"
         android:hint="@string/meeting_details"
         android:editable="false"
         android:elegantTextHeight="false"
-        android:layout_above="@+id/Back"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/NextMeetingNotes"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NextMeetingNotes"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:inputType="textLongMessage"
+        android:hint="Next Meeting Notes"
+        android:layout_margin="5dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/GeneralNotes"
+        android:layout_below="@+id/LastMeetingNotes"
+        android:layout_centerHorizontal="true"
+        android:hint="General Notes"
+        android:layout_margin="5dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back_to_home"
         android:id="@+id/Back"
-        android:onClick="onBack"
+        android:onClick="showDialog"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -85,9 +125,9 @@
         android:text="@string/save_contact"
         android:id="@+id/saveButton"
         android:layout_alignTop="@+id/Back"
-        android:layout_alignRight="@+id/nextDateMeeting"
-        android:layout_alignEnd="@+id/nextDateMeeting"
-        android:layout_toRightOf="@+id/GeneralNotes"
-        android:layout_toEndOf="@+id/GeneralNotes" />
+        android:onClick="onShow"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignBottom="@+id/Back" />
 
 </RelativeLayout>
