@@ -33,6 +33,14 @@ public class Contact {
         this.mLastReport = lastReport;
         this.mNextReport = nextReport;
     }
+    public Contact(String firstName, String notes, String lastDate, String nextDate, String lastReport, String nextReport) {
+        this.mFirstName = firstName;
+        this.mNotes = notes;
+        this.mLastDate = lastDate;
+        this.mNextDate = nextDate;
+        this.mLastReport = lastReport;
+        this.mNextReport = nextReport;
+    }
 
     public int get_id() {
         return _id;

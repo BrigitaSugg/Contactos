@@ -9,7 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import com.thinkbiggs.contactos.R;
+import com.thinkbiggs.contactos.database.DatabaseHandler;
+import com.thinkbiggs.contactos.model.Contact;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -19,6 +22,10 @@ public class ConnectionListActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection_list);
+
+        DatabaseHandler db = new DatabaseHandler(this);
+
+        List<Contact> contacts = db.getAllContacts();
 
         String[] ContactsList = {"Nicolai", "Nate", "Joshua"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
