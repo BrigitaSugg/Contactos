@@ -67,10 +67,9 @@ public class ProfileActivity extends ActionBarActivity {
 
 
     public void onShow(View view){
-       //on save, push all data to database. need to call the variable and pass it to a database
-       // String name = "whatever was entered into the name field";
         //We need to pull the data out of the fields in the activity, then call the database handler to store the data as a contact.
         //Need Logic to determine if "Save" is ADDING or UPDATING.
+        //Need a DELETE button
         /*
         Contact contact = new Contact(
                 prfNameField, //Name
