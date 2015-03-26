@@ -10,12 +10,14 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@android:id/list"
+        android:id="@+id/android:list"
         android:layout_centerHorizontal="true"
         android:layout_alignParentStart="false"
         android:layout_alignParentLeft="false"
         tools:listitem="@android:layout/simple_expandable_list_item_1"
-        android:layout_above="@+id/Add_contact_button"/>
+        android:layout_above="@+id/Add_contact_button"
+        android:smoothScrollbar="true"
+        />
 
     <TextView
         android:layout_width="wrap_content"
