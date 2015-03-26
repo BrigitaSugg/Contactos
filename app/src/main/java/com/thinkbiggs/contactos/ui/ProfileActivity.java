@@ -44,6 +44,7 @@ public class ProfileActivity extends ActionBarActivity {
         startActivity(intent);
     }*/
 
+    /* WARNING ON BACK BUTTON
     public void showDialog(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
 
@@ -63,7 +64,7 @@ public class ProfileActivity extends ActionBarActivity {
         AlertDialog alert = builder.create();
         alert.show();
 
-    }
+    }*/
 
 
     public void onShow(View view){
