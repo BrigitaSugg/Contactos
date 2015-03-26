@@ -69,6 +69,20 @@ public class ProfileActivity extends ActionBarActivity {
     public void onShow(View view){
        //on save, push all data to database. need to call the variable and pass it to a database
        // String name = "whatever was entered into the name field";
+        //We need to pull the data out of the fields in the activity, then call the database handler to store the data as a contact.
+        //Need Logic to determine if "Save" is ADDING or UPDATING.
+        /*
+        Contact contact = new Contact(
+                prfNameField, //Name
+                prfNotesField, //Notes
+                prfLDateField, //LastDate
+                prfNDateField, //NextDate
+                prfLNotesField, //LastNotes
+                prfNNotesField //NextNotes
+        );
+        DatabaseHandler db = new DatabaseHandler(this);
+        db.addContact(contact);
+        */
         Toast toast = Toast.makeText(getApplicationContext(), "Contact was saved!", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0); //it sets the position of the pop-up message
         toast.show();

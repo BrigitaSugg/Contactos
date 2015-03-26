@@ -14,7 +14,8 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentStart="false"
         android:layout_alignParentLeft="false"
-        tools:listitem="@android:layout/simple_expandable_list_item_1" />
+        tools:listitem="@android:layout/simple_expandable_list_item_1"
+        android:layout_above="@+id/Add_contact_button"/>
 
     <TextView
         android:layout_width="wrap_content"

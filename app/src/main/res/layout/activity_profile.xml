@@ -104,7 +104,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/GeneralNotes"
+        android:id="@+id/prfNotesField"
         android:layout_below="@+id/LastMeetingNotes"
         android:layout_centerHorizontal="true"
         android:hint="General Notes"

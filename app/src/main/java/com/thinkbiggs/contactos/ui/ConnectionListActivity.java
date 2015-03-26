@@ -4,6 +4,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,18 +30,13 @@ public class ConnectionListActivity extends ListActivity {
         Contact bert = new Contact("Bert Balloon", "Bert\'s cool", "01/01/1900", "01/02/2010", "Bert was a baloon", "Is bert still a balloon?");
         db.addContact(bert);
 
+        //List shows first names, but needs to show more than just first name.
+        //On-click in line, should move to profile page for that contact
         List<Contact> contacts = db.getAllContacts();
-
+        Log.d("ConnectionListActivity", contacts.toString());
         ArrayAdapter<Contact> adapter = new ArrayAdapter<Contact>(this,android.R.layout.simple_list_item_1, contacts);
         setListAdapter(adapter);
 
-        /*
-        String[] ContactsList = {"Nicolai", "Nate", "Joshua"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
-                ContactsList);
-        setListAdapter(adapter);
-        */
     }
     public void goToNewActivity(View v){
         Intent intent = new Intent(this, ProfileActivity.class);

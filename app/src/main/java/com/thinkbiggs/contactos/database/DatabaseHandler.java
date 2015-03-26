@@ -119,6 +119,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 contact.setNextDate(cursor.getString(4));
                 contact.setLastReport(cursor.getString(5));
                 contact.setNextReport(cursor.getString(6));
+                contactList.add(contact);
             } while (cursor.moveToNext());
         }
         return contactList;

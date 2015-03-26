@@ -97,4 +97,8 @@ public class Contact {
     public void setNextReport(String nextReport) {
         mNextReport = nextReport;
     }
+    @Override
+    public String toString() {
+        return getFirstName();
+    }
 }
