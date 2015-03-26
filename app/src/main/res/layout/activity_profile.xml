@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:text="@string/back"
         android:id="@+id/Back"
-        android:onClick="showDialog"
+        android:onClick="goToNewActivity"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

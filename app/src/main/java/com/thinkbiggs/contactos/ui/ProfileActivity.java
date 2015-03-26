@@ -27,6 +27,10 @@ public class ProfileActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        Intent intent = getIntent();
+        String passed_id = intent.getStringExtra("contact_id");
+        Toast.makeText(getBaseContext(), passed_id, Toast.LENGTH_LONG).show();
+        //Upon receipt, pull up the object out of the database, based on ID, and populate the object here.
         DatabaseHandler db = new DatabaseHandler(this);
 
         //Create some test Contact objects
@@ -39,10 +43,6 @@ public class ProfileActivity extends ActionBarActivity {
         //db.deleteContact(nate);
 
     }
-    /*public void onBack(View v) {
-        Intent intent = new Intent(this, ConnectionListActivity.class);
-        startActivity(intent);
-    }*/
 
     /* WARNING ON BACK BUTTON
     public void showDialog(View view){

@@ -41,11 +41,13 @@ public class ConnectionListActivity extends ListActivity {
             public void onItemClick (AdapterView < ? > parent, View view, int position, long id){
 
                 String item = ((TextView) view).getText().toString();
-
-                Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
-
+                Toast.makeText(getBaseContext(), item, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                //At present just passing the text string.
+                // Need to pull out the first number in the string (before the '.') and pass that number
+                intent.putExtra("contact_id", item);
+                startActivity(intent);
             }
-
         });
     }
 
