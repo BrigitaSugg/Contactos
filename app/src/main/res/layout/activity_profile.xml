@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/quickContactBadge"
-        android:layout_above="@+id/idUserId"
-        android:layout_alignRight="@+id/idUserId"
-        android:layout_alignEnd="@+id/idUserId"
-        android:layout_alignTop="@+id/idName"
+        android:layout_above="@+id/vUserId"
+        android:layout_alignRight="@+id/vUserId"
+        android:layout_alignEnd="@+id/vUserId"
+        android:layout_alignTop="@+id/vFirstName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -23,30 +23,34 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/idUserId"
-        android:layout_below="@+id/lastDateMet"
-        android:layout_alignRight="@+id/Back"
-        android:layout_alignEnd="@+id/Back" />
+        android:id="@+id/vUserId"
+        android:layout_below="@+id/vLastDate"
+        android:layout_alignRight="@+id/vBackButton"
+        android:layout_alignEnd="@+id/vBackButton"
+        android:maxLines="1"
+        android:minLines="1"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/idName"
+        android:id="@+id/vFirstName"
         android:hint="@string/name"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:maxLines="1"
+        android:minLines="1"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/idLocation"
-        android:layout_below="@+id/idName"
-        android:layout_alignLeft="@+id/idName"
-        android:layout_alignStart="@+id/idName"
+        android:id="@+id/vLocation"
+        android:layout_below="@+id/vFirstName"
+        android:layout_alignLeft="@+id/vFirstName"
+        android:layout_alignStart="@+id/vFirstName"
         android:layout_alignParentEnd="false"
         android:hint="@string/location_details"
         android:editable="true"
@@ -57,10 +61,10 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/lastDateMet"
-        android:layout_below="@+id/idLocation"
-        android:layout_alignLeft="@+id/idLocation"
-        android:layout_alignStart="@+id/idLocation"
+        android:id="@+id/vLastDate"
+        android:layout_below="@+id/vLocation"
+        android:layout_alignLeft="@+id/vLocation"
+        android:layout_alignStart="@+id/vLocation"
         android:layout_marginLeft="50dp"
         android:layout_marginStart="50dp"
         android:enabled="true"
@@ -71,11 +75,11 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/nextDateMeeting"
+        android:id="@+id/vNextDate"
         android:enabled="true"
-        android:layout_below="@+id/lastDateMet"
-        android:layout_alignLeft="@+id/lastDateMet"
-        android:layout_alignStart="@+id/lastDateMet"
+        android:layout_below="@+id/vLastDate"
+        android:layout_alignLeft="@+id/vLastDate"
+        android:layout_alignStart="@+id/vLastDate"
         android:hint="Next Date"/>
 
     <EditText
@@ -83,38 +87,44 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/LastMeetingNotes"
+        android:id="@+id/vLastReport"
         android:hint="@string/meeting_details"
         android:editable="false"
         android:elegantTextHeight="false"
-        android:layout_below="@+id/NextMeetingNotes"
+        android:layout_below="@+id/vNextReport"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp" />
+        android:layout_margin="5dp"
+        android:minLines="2"
+        android:maxLines="2"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/NextMeetingNotes"
+        android:id="@+id/vNextReport"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:inputType="textLongMessage"
         android:hint="Next Meeting Notes"
-        android:layout_margin="5dp" />
+        android:maxLines="2"
+        android:minLines="2"
+        android:layout_margin="5dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/prfNotesField"
-        android:layout_below="@+id/LastMeetingNotes"
+        android:id="@+id/vNotes"
+        android:layout_below="@+id/vLastReport"
         android:layout_centerHorizontal="true"
         android:hint="General Notes"
-        android:layout_margin="5dp" />
+        android:layout_margin="5dp"
+        android:maxLines="2"
+        android:minLines="2"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back"
-        android:id="@+id/Back"
+        android:id="@+id/vBackButton"
         android:onClick="goToNewActivity"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -125,11 +135,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/save"
-        android:id="@+id/saveButton"
-        android:layout_alignTop="@+id/Back"
+        android:id="@+id/vSaveButton"
+        android:layout_alignTop="@+id/vBackButton"
         android:onClick="onShow"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="false"
-        android:layout_alignBottom="@+id/Back" />
+        android:layout_alignBottom="@+id/vBackButton" />
 
 </RelativeLayout>
