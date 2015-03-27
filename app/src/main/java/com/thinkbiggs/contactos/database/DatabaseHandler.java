@@ -17,7 +17,7 @@ import java.util.List;
 public class DatabaseHandler extends SQLiteOpenHelper {
     //All Static Variables
     //Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     //database name
     private static final String DATABASE_NAME = "contactsManager";
@@ -76,6 +76,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(KEY_FNAME, contact.getFirstName());
+        values.put(KEY_LNAME, contact.getLastName());
+        values.put(KEY_LOCX, contact.getLocX());
+        values.put(KEY_LOCY, contact.getLocY());
+        values.put(KEY_PIC, contact.getPic());
         values.put(KEY_NOTES, contact.getNotes());
         values.put(KEY_LDATE, contact.getLastDate());
         values.put(KEY_NDATE, contact.getNextDate());
@@ -91,11 +95,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public Contact getContact(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID, KEY_FNAME, KEY_NOTES, KEY_LDATE, KEY_NDATE, KEY_LREPORT, KEY_NREPORT }, KEY_ID + "=?", new String[] { String.valueOf(id) }, null, null, null, null);
+        Cursor cursor = db.query(TABLE_CONTACTS, new String[]
+                { KEY_ID,
+                  KEY_FNAME,
+                  KEY_LNAME,
+                  KEY_LOCX,
+                  KEY_LOCY,
+                  KEY_PIC,
+                  KEY_NOTES,
+                  KEY_LDATE,
+                  KEY_NDATE,
+                  KEY_LREPORT,
+                  KEY_NREPORT
+                },
+                KEY_ID + "=?", new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
-        Contact contact = new Contact(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
+        Contact contact = new Contact(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10));
         // return contact
         return contact;
     }
@@ -114,11 +131,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 Contact contact = new Contact();
                 contact.set_id(Integer.parseInt(cursor.getString(0)));
                 contact.setFirstName(cursor.getString(1));
-                contact.setNotes(cursor.getString(2));
-                contact.setLastDate(cursor.getString(3));
-                contact.setNextDate(cursor.getString(4));
-                contact.setLastReport(cursor.getString(5));
-                contact.setNextReport(cursor.getString(6));
+                contact.setLastName(cursor.getString(2));
+                contact.setLocX(cursor.getString(3));
+                contact.setLocY(cursor.getString(4));
+                contact.setPic(cursor.getString(5));
+                contact.setNotes(cursor.getString(6));
+                contact.setLastDate(cursor.getString(7));
+                contact.setNextDate(cursor.getString(8));
+                contact.setLastReport(cursor.getString(9));
+                contact.setNextReport(cursor.getString(10));
                 contactList.add(contact);
             } while (cursor.moveToNext());
         }
@@ -139,6 +160,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(KEY_FNAME, contact.getFirstName());
+        values.put(KEY_LNAME, contact.getLastName());
+        values.put(KEY_LOCX, contact.getLocX());
+        values.put(KEY_LOCY, contact.getLocY());
+        values.put(KEY_PIC, contact.getPic());
         values.put(KEY_NOTES, contact.getNotes());
         values.put(KEY_LDATE, contact.getLastDate());
         values.put(KEY_NDATE, contact.getNextDate());

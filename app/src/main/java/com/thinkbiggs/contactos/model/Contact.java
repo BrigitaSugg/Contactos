@@ -7,12 +7,11 @@ package com.thinkbiggs.contactos.model;
  */
 public class Contact {
     private int _id;
-    //private int mUserId;
-    //private String mEmail;
     private String mFirstName;
-    //private String mLastName;
-    //private Location mLocation;
-    //private File mPicture;
+    private String mLastName;
+    private String mLocX;
+    private String mLocY;
+    private String mPic;
     private String mNotes;
     private String mLastDate;
     private String mNextDate;
@@ -33,13 +32,35 @@ public class Contact {
         this.mLastReport = lastReport;
         this.mNextReport = nextReport;
     }
-    public Contact(String firstName, String notes, String lastDate, String nextDate, String lastReport, String nextReport) {
+
+
+    public Contact(String firstName, String location, String notes, String lastDate, String nextDate, String lastReport, String nextReport) {
         this.mFirstName = firstName;
+        this.mLocX = location;
         this.mNotes = notes;
         this.mLastDate = lastDate;
         this.mNextDate = nextDate;
         this.mLastReport = lastReport;
         this.mNextReport = nextReport;
+    }
+
+
+    public Contact(int id, String firstName, String lastName, String locX, String locY, String pic, String notes, String lastDate, String nextDate, String lastReport, String nextReport) {
+        this._id = id;
+        this.mFirstName = firstName;
+        this.mLastName = lastName;
+        this.mLocX = locX;
+        this.mLocY = locY;
+        this.mPic = pic;
+        this.mNotes = notes;
+        this.mLastDate = lastDate;
+        this.mNextDate = nextDate;
+        this.mLastReport = lastReport;
+        this.mNextReport = nextReport;
+    }
+    @Override
+    public String toString() {
+        return _id + ". " + mFirstName + " " + mNextDate;
     }
 
     public int get_id() {
@@ -56,6 +77,38 @@ public class Contact {
 
     public void setFirstName(String firstName) {
         mFirstName = firstName;
+    }
+
+    public String getLastName() {
+        return mLastName;
+    }
+
+    public void setLastName(String lastName) {
+        mLastName = lastName;
+    }
+
+    public String getLocX() {
+        return mLocX;
+    }
+
+    public void setLocX(String locX) {
+        mLocX = locX;
+    }
+
+    public String getLocY() {
+        return mLocY;
+    }
+
+    public void setLocY(String locY) {
+        mLocY = locY;
+    }
+
+    public String getPic() {
+        return mPic;
+    }
+
+    public void setPic(String pic) {
+        mPic = pic;
     }
 
     public String getNotes() {
@@ -98,8 +151,4 @@ public class Contact {
         mNextReport = nextReport;
     }
 
-    @Override
-    public String toString() {
-        return _id + ". " + mFirstName + " " + mNextDate;
-    }
 }

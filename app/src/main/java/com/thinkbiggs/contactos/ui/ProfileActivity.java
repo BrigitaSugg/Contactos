@@ -16,6 +16,7 @@ import com.thinkbiggs.contactos.model.Contact;
 public class ProfileActivity extends ActionBarActivity {
 
     private EditText prfNameField; //Name
+    private EditText prfLocation;
     private EditText prfNotesField; //Notes
     private EditText prfLDateField; //LastDate
     private EditText prfNDateField; //NextDate
@@ -33,6 +34,7 @@ public class ProfileActivity extends ActionBarActivity {
         setContentView(R.layout.activity_profile);
 
         prfNameField = (EditText) findViewById(R.id.vFirstName);
+        prfLocation = (EditText) findViewById(R.id.vLocation);
         prfNotesField = (EditText) findViewById(R.id.vNotes);
         prfLDateField = (EditText) findViewById(R.id.vLastDate);
         prfNDateField = (EditText) findViewById(R.id.vNextDate);
@@ -56,6 +58,7 @@ public class ProfileActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Contact contact = new Contact(
                         prfNameField.getText().toString(), //Name
+                        prfLocation.getText().toString(), //Location
                         prfNotesField.getText().toString(), //Notes
                         prfLDateField.getText().toString(), //LastDate
                         prfNDateField.getText().toString(), //NextDate
