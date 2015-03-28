@@ -5,30 +5,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.thinkbiggs.contactos.ui.ProfileActivity"
-    android:id="@+id/ProfileRelativeLayout">
+    android:id="@+id/ProfileRelativeLayout"
+    android:background="@android:color/white">
 
-    <QuickContactBadge
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/quickContactBadge"
-        android:layout_above="@+id/vUserId"
-        android:layout_alignRight="@+id/vUserId"
-        android:layout_alignEnd="@+id/vUserId"
-        android:layout_alignTop="@+id/vFirstName"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/vUserId"
-        android:layout_below="@+id/vLastDate"
-        android:layout_alignRight="@+id/vBackButton"
-        android:layout_alignEnd="@+id/vBackButton"
-        android:maxLines="1"
-        android:minLines="1"/>
+        android:layout_alignParentStart="true"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:minHeight="100dp"
+        android:minWidth="100dp"
+        android:src="@mipmap/ic_launcher"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -41,7 +32,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:maxLines="1"
-        android:minLines="1"/>
+        android:minLines="1"
+        android:editable="true"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -68,7 +60,11 @@
         android:layout_marginLeft="50dp"
         android:layout_marginStart="50dp"
         android:enabled="true"
-        android:hint="Last Date"/>
+        android:hint="Last Date"
+        android:editable="true"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -80,45 +76,74 @@
         android:layout_below="@+id/vLastDate"
         android:layout_alignLeft="@+id/vLastDate"
         android:layout_alignStart="@+id/vLastDate"
-        android:hint="Next Date"/>
+        android:hint="Next Date"
+        android:editable="true"
+        android:maxLines="1"
+        android:minLines="1"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/vLastReport"
         android:hint="@string/meeting_details"
-        android:editable="false"
+        android:editable="true"
         android:elegantTextHeight="false"
-        android:layout_below="@+id/vNextReport"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
         android:minLines="2"
-        android:maxLines="2"/>
+        android:maxLines="2"
+        android:maxHeight="80dp"
+        android:minHeight="80dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="top"
+        android:layout_above="@+id/vNotes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:drawable/editbox_dropdown_light_frame"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/vNextReport"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:inputType="textLongMessage"
         android:hint="Next Meeting Notes"
         android:maxLines="2"
         android:minLines="2"
-        android:layout_margin="5dp"/>
+        android:editable="true"
+        android:minHeight="80dp"
+        android:maxHeight="80dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="top"
+        android:layout_above="@+id/vLastReport"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"
+        android:autoText="false"
+        android:background="@android:drawable/editbox_dropdown_light_frame"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/vNotes"
-        android:layout_below="@+id/vLastReport"
-        android:layout_centerHorizontal="true"
         android:hint="General Notes"
-        android:layout_margin="5dp"
         android:maxLines="2"
-        android:minLines="2"/>
+        android:minLines="2"
+        android:editable="true"
+        android:maxHeight="80dp"
+        android:minHeight="80dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="top"
+        android:layout_above="@+id/vBackButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:drawable/editbox_dropdown_light_frame"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -128,7 +153,11 @@
         android:onClick="goToNewActivity"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:maxWidth="100dp"
+        android:minWidth="100dp"
+        android:textColor="@android:color/white"
+        android:background="@color/ThinkBiggsPurple"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -136,10 +165,25 @@
         android:layout_height="wrap_content"
         android:text="@string/save"
         android:id="@+id/vSaveButton"
-        android:layout_alignTop="@+id/vBackButton"
         android:onClick="onShow"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false"
-        android:layout_alignBottom="@+id/vBackButton" />
+        android:layout_alignParentEnd="true"
+        android:maxWidth="100dp"
+        android:minWidth="100dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_green_light"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/vDeleteButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="100dp"
+        android:minWidth="100dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_light"/>
 
 </RelativeLayout>

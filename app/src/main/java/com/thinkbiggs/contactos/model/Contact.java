@@ -23,9 +23,10 @@ public class Contact {
 
     }
 
-    public Contact(int id, String firstName, String notes, String lastDate, String nextDate, String lastReport, String nextReport) {
+    public Contact(int id, String firstName, String location, String notes, String lastDate, String nextDate, String lastReport, String nextReport) {
         this._id = id;
         this.mFirstName = firstName;
+        this.mLocX = location;
         this.mNotes = notes;
         this.mLastDate = lastDate;
         this.mNextDate = nextDate;

@@ -2,6 +2,7 @@ package com.thinkbiggs.contactos.ui;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,6 +26,11 @@ public class ConnectionListActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection_list);
+        Typeface tf = Typeface.createFromAsset(getAssets(),
+                "Pacifico.ttf");
+        TextView tv = (TextView) findViewById(R.id.vMainTitle);
+        tv.setTypeface(tf);
+
         mAddContactButton = (Button) findViewById(R.id.vAddContactButton);
 
         DatabaseHandler db = new DatabaseHandler(this);
@@ -74,14 +80,14 @@ public class ConnectionListActivity extends ListActivity {
         Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
         //At present just passing the text string.
         // Need to pull out the first number in the string (before the '.') and pass that number
-        intent.putExtra("contact_id", item);
-        intent.putExtra("Update?","Y");
+        intent.putExtra(getString(R.string.contact_id), Integer.parseInt(item.substring(0,item.indexOf("."))));
+        intent.putExtra("update", 1);
         startActivity(intent);
 }
 
     private void AddContactButton() {
         Intent intent = new Intent(this, ProfileActivity.class);
-        intent.putExtra("Update?","N");
+        intent.putExtra("update", 0);
         startActivity(intent);
 
     }
